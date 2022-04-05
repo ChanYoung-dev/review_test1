@@ -29,7 +29,7 @@ public class ItemService {
     }
 
     @Transactional
-    public void updateItem(Long id, String name, int price) {
+    public void updateItem(Long id, String name, int price) { // public void updateItem(Long id, UpdateItemDto itemDto)
         Item item = itemRepository.findOne(id);
         //update로 따로함수만드는게 좋다
         //item.change(price, name, stockQuantity)
