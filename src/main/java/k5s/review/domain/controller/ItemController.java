@@ -68,9 +68,11 @@ public class ItemController {
     }
 
 
+
     /**
      * 상품 수정
      */
+    /*
     @PostMapping(value = "/items/{itemId}/edit")
     public String updateItem(@ModelAttribute("form") BookForm form) {
         Book book = new Book();
@@ -81,6 +83,13 @@ public class ItemController {
         book.setAuthor(form.getAuthor());
         book.setIsbn(form.getIsbn());
         itemService.saveItem(book);
+        return "redirect:/items";
+    }
+    */
+
+    @PostMapping(value = "/items/{itemId}/edit")
+    public String updateItem(@ModelAttribute("form") BookForm form) {
+        itemService.updateItem(form.getId(), form.getName(), form.getPrice());
         return "redirect:/items";
     }
 }
