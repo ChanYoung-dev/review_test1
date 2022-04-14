@@ -26,7 +26,8 @@ public class InitDb {
     static class InitService {
         private final EntityManager em;
         public void dbInit1() {
-            Member member = createMember("userA", "서울", "1", "1111"); em.persist(member);
+            Member member = createMember("userA", "서울", "1", "1111");
+            em.persist(member);
             Book book1 = createBook("JPA1 BOOK", 10000, 100);
             em.persist(book1);
             Book book2 = createBook("JPA2 BOOK", 20000, 100);
